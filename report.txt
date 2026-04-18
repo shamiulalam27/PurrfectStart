@@ -1,0 +1,799 @@
+1 
+PurrfectStart: A Comprehensive Kitten and Cat Care Web-Based Platform 
+ 
+Student Name: Shamiul Alam 
+Student ID: 001228779    
+Course: COMP1682 Final Year Project   
+Degree Program: Business Computing BSc (Hons)   
+Document Title: Contextual (Initial) Report   
+Date Due: 12 January 2026   
+ 
+ 
+  
+2 
+Abstract 
+ 
+The welfare of domestic cats and kittens has become an increasingly important concern as pet 
+ownership rises and adoption rates increase. Many new owners lack access to reliable, centralised, 
+and evidence -based guidance on responsible cat care, veterinary services, and ethical adoption 
+practices. This contextual report explores the development of PurrfectStart, a comprehensive web-
+based platform designed to address these challenges by integrating educational resources, adoption 
+support, veterinary service discovery, and community interaction into a single digital environment.  
+ 
+The report critically examines existing research on animal welfare, digital information platforms, 
+and online communities, identifying gaps in current solutions that often fragment information 
+across multiple sources. A hybrid Agile-Waterfall development methodology is justified to balance 
+academic structure with iterative improvement. Product research, requirements analysis, and 
+ethical, legal, and professional considerations are exp lored in depth to contextualise the proposed 
+system within current technological and societal practices. The findings support the need for an 
+accessible, user-centred platform that promotes responsible ownership, reduces abandonment, and 
+contributes positi vely to animal welfare. This report provides the theoretical and practical 
+foundation for the development of the PurrfectStart platform.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3 
+Table of Contents 
+ 
+ 
+Section 
+No. 
+Title Page 
+No. 
+— Abstract 1 
+— Acknowledgements 2 
+2 Introduction 3 
+2.1 Background 4 
+2.2 Aims and Objectives 6 
+2.3 Approach 8 
+2.4 Justification of the Suitability of the Methodology or Framework 
+Followed 
+10 
+2.5 Feasibility Study 12 
+3 Literature Review 15 
+3.1 Approach to Literature Searching 16 
+3.2 Identifying the Problem 18 
+3.3 Education, Trust, and Community in Digital Welfare Platforms 20 
+3.4 Implications for User-Centred and Ethical Design 22 
+3.5 Conclusions 24 
+4 
+4 Product Research 26 
+4.1 Comparing Similar Products or Platforms Against Usability Criteria 27 
+5 Legal, Social, Ethical and Professional Issues and Considerations 30 
+6 Requirements 34 
+6.1 Analysis of Requirements 35 
+6.2 Comparison of Systems 37 
+6.3 Requirements Elicitation 39 
+6.4 Functional Requirements 41 
+6.5 Non-Functional Requirements 43 
+7 Design 46 
+8 Prototype 49 
+8.1 Review of Technology 51 
+9 Reflection 54 
+— References 57 
+  
+5 
+ 
+Acknowledgements  
+ 
+The author would like to express sincere gratitude to the project supervisor for their guidance, 
+feedback, and academic support throughout the development of this contextual report. Appreciation 
+is also extended to academic staff within the Business Comput ing programme for providing 
+foundational knowledge that informed this research. Finally, acknowledgment is given to animal 
+welfare organisations and online resources whose publicly available information contributed to the 
+understanding of responsible pet c are and digital community platforms.  
+ 
+  
+6 
+2. Introduction 
+This section contextualises the project by revisiting the original proposal and refining its focus 
+based on further research, reflection, and critical evaluation. While the initial proposal established 
+the motivation for developing a web-based platform for cat and kitten care, the intervening period 
+of research has enabled a deeper understanding of the problem space, existing solutions, and 
+realistic project constraints. As a result, the scope, objectives, and development approach have been 
+refined to ensur e academic rigour, technical feasibility, and meaningful contribution to animal 
+welfare and digital information systems. 
+The following subsections outline the refined background context, revised aims and objectives, the 
+practical approach adopted, and a justification of the chosen methodological framework. 
+ 
+2.1 Background 
+The original project proposal identified a growing concern surrounding domestic cat welfare, 
+particularly among first -time pet owners who lack access to reliable, structured, and centralised 
+guidance. Subsequent research has reinforced this concern, reveal ing that many existing digital 
+resources for cat care are fragmented, inconsistent in quality, or overly commercialised. As a result, 
+users are often required to consult multiple platforms to obtain information on care practices, 
+veterinary services, adoption processes, and peer support. 
+Further investigation into animal welfare literature highlights that inadequate owner education is a 
+recurring contributor to preventable health issues, behavioural problems, and, in severe cases, 
+abandonment. This problem is exacerbated by the increasing reliance on informal online sources, 
+such as social media groups and unmoderated forums, where misinformation can spread easily. 
+While these platforms provide emotional support and anecdotal advice, they often lack 
+accountability, evidence-based content, and structured moderation. 
+From a technological perspective, modern web platforms provide opportunities to consolidate high-
+quality information, services, and community interaction within a single environment. However, 
+many existing pet care platforms focus narrowly on one function,  such as adoption listings or 
+informational blogs, without addressing the broader ecosystem of responsible ownership. This 
+background research has clarified the need for an integrated, user -centred platform that balances 
+educational authority, accessibility, and community engagement. 
+Consequently, the project’s focus has evolved from simply “providing information” to addressing 
+how information is structured, validated, and socially reinforced within a digital environment that 
+supports long-term responsible behaviour. 
+ 
+7 
+2.2 Aims and Objectives 
+The original proposal outlined aims and objectives centred on creating an all -in-one web-based 
+resource for cat owners. While these remain broadly valid, further reflection and research have 
+prompted refinement to ensure clarity, feasibility, and stronger academic justification. 
+The primary aim of the project has been refined to: 
+To design and develop a user-centred, web-based platform that supports responsible cat and 
+kitten ownership through structured educational content, ethical adoption facilitation, 
+veterinary service discovery, and moderated community interaction. 
+Several objectives from the original proposal have been revised to reflect a more realistic 
+understanding of development constraints and assessment criteria. In particular, objectives related 
+to advanced automation and large-scale data integration have been narrowed to prioritise usability, 
+accessibility, and content credibility. 
+The revised objectives are to: 
+● Investigate common challenges faced by prospective and new cat owners through literature 
+and product research.  
+ 
+● Critically analyse existing pet care, adoption, and veterinary platforms to identify 
+functional and experiential gaps.  
+ 
+● Design an accessible and intuitive web interface that complies with recognised usability 
+and accessibility standards.  
+ 
+● Implement core platform features, including care guides, adoption listings, veterinary 
+search functionality, and community forums.  
+ 
+● Evaluate the platform through usability testing and reflective analysis to inform iterative 
+improvements. 
+ 
+These revised objectives demonstrate a shift from an initially broad ambition towards a focused, 
+achievable set of goals that align with both academic expectations and practical development 
+realities. 
+ 
+ 
+ 
+8 
+2.3 Approach 
+The initial proposal presented a structured development approach that closely mirrored formal 
+software development methodologies. With increased experience and reflection, this report adopts 
+a more honest and realistic description of the actual approach taken. 
+In practice, the project follows an exploratory, iterative approach informed by ongoing research, 
+experimentation, and incremental refinement. Rather than rigidly adhering to a prescriptive 
+methodology, development decisions are shaped by emerging insights  from literature review, 
+platform analysis, and practical constraints such as time, tool capabilities, and skill limitations. 
+The approach involves cycles of: 
+● Research and reflection to inform design decisions,  
+ 
+● Prototyping and implementation of features,  
+ 
+● Informal evaluation and revision based on usability considerations.  
+ 
+This adaptive process acknowledges that understanding of the problem space evolves alongside 
+development. Early assumptions regarding user needs and technical solutions have been challenged 
+and refined as the project progressed. This approach prioritises l earning and responsiveness over 
+rigid adherence to predefined stages, while still maintaining sufficient structure to support 
+documentation and assessment requirements. 
+By recognising the iterative and sometimes uncertain nature of the development process, the project 
+reflects authentic practice rather than an idealised version of software engineering. 
+ 
+2.4 Justification of the Suitability of the Methodology or 
+Framework Followed 
+Although the project does not strictly follow a single branded methodology, its overall structure 
+aligns most closely with a hybrid framework that combines elements of traditional staged 
+development with iterative refinement. This approach is particularly suitable for an academic 
+project where both process transparency and flexibility are required. 
+A staged structure supports clear documentation of requirements, design decisions, and outcomes, 
+which is essential for academic evaluation. At the same time, iterative refinement allows the project 
+to respond to insights gained during research and impleme ntation, particularly in relation to 
+usability and content organisation. 
+9 
+This hybrid approach is well suited to a web-based information system where requirements are not 
+fully known at the outset and evolve as understanding deepens. It also reflects contemporary 
+industry practice, where rigid methodologies are often adapted pragmatically rather than followed 
+dogmatically. 
+2.5 Feasibility Study 
+Feasibility 
+Aspect 
+Key Considerations Assessment Risks / 
+Constraints 
+Mitigation / 
+Justification 
+Technical 
+Feasibility 
+Ability to develop 
+core features (content 
+delivery, user 
+accounts, forums, 
+search) using 
+available web 
+platforms and tools 
+Feasible Platform 
+limitations; plugin 
+compatibility 
+issues 
+Use established 
+platforms with 
+mature ecosystems; 
+prioritise core 
+features; iterative 
+prototyping 
+Operational 
+Feasibility 
+Practical operation of 
+the platform, 
+including moderation, 
+content updates, and 
+user interaction 
+Feasible Moderation 
+workload; content 
+maintenance 
+Clear community 
+guidelines; 
+reporting tools; 
+structured content 
+allowing 
+incremental updates 
+Economic 
+Feasibility 
+Cost of development, 
+hosting, and tools 
+within an academic 
+context 
+Highly 
+feasible 
+Subscription or 
+hosting costs 
+Use low -cost or 
+student-accessible 
+tools; no 
+commercial 
+transactions or paid 
+services 
+10 
+Legal 
+Feasibility 
+Compliance with data 
+protection, privacy, 
+and content liability 
+regulations 
+Feasible Mismanagement 
+of personal data; 
+unclear liability 
+boundaries 
+GDPR-compliant 
+data handling; 
+transparent privacy 
+policy; clear 
+disclaimers 
+Ethical 
+Feasibility 
+Responsibility 
+towards animal 
+welfare, users, and 
+information accuracy 
+Feasible Risk of 
+misinformation or 
+harmful advice 
+Evidence-informed 
+content; moderated 
+forums; separation 
+of advice and 
+professional 
+veterinary services 
+Social 
+Feasibility 
+Impact on users and 
+community behaviour 
+Feasible Toxic interactions; 
+exclusion of some 
+user groups 
+Moderation 
+policies; inclusive 
+design; accessible 
+language and 
+interface 
+Professional 
+Feasibility 
+Alignment with 
+professional 
+computing standards 
+and academic 
+expectations 
+Feasible Poor 
+documentation or 
+unjustified design 
+choices 
+Clear 
+documentation; 
+defensible design 
+rationale; adherence 
+to professional 
+codes 
+Schedule 
+Feasibility 
+Completion within 
+the academic 
+timeframe 
+Feasible 
+with 
+control 
+Scope creep; 
+underestimation of 
+effort 
+Prioritised feature 
+set; buffer time; 
+iterative 
+development 
+Scalability 
+Feasibility 
+Potential to extend 
+platform beyond 
+academic prototype 
+Limited 
+but 
+acceptable 
+Not designed for 
+high-volume 
+production use 
+Scope intentionally 
+limited to academic 
+prototype; 
+11 
+scalability noted as 
+future work 
+ 
+3. Literature Review 
+The purpose of this literature review is to situate the PurrfectStart project within existing academic 
+and professional research related to animal welfare, digital information platforms, online 
+communities, and user -centred system design. Rather than catal oguing individual studies, this 
+review synthesises key themes and debates to construct a coherent argument that justifies the need 
+for the proposed platform and informs its design. In doing so, it follows the guidance that a literature 
+review should function as a critical narrative leading into the proposed study rather than a sequential 
+summary of sources. 
+ 
+3.1 Approach to Literature Searching 
+The literature search process was guided by the need to understand both the social problem of 
+domestic cat welfare and the digital mechanisms through which information, services, and 
+communities are delivered. Sources were identified using a combination of  academic databases, 
+professional publications, and authoritative organisational resources. 
+Academic literature was primarily sourced from databases such as Google Scholar and institutional 
+library collections, focusing on peer -reviewed journals and academic books related to animal 
+welfare, human –computer interaction, online communities, and info rmation systems design. 
+Search terms included combinations of phrases such as responsible pet ownership, animal welfare 
+education, online communities, information credibility, user-centred design, and digital health or 
+welfare platforms. These terms were r efined iteratively as patterns and gaps emerged during the 
+review process. 
+In addition to academic sources, professional and organisational publications were consulted to 
+ground the study in real -world practice. Resources from recognised animal welfare organisations 
+and usability experts were included to complement academic theor y with applied guidance. This 
+mixed approach ensured that the review reflected both conceptual perspectives and practical 
+realities. 
+12 
+Bibliographic management software was used to organise sources, track citations, and generate 
+references in a consistent format aligned with Harvard -style requirements. This supported 
+systematic comparison of sources and reduced the risk of unstructured or anecdotal referencing. 
+ 
+3.2 Identifying the Problem 
+The literature consistently identifies education as a central factor influencing responsible pet 
+ownership and animal welfare outcomes. Research in animal behaviour and welfare suggests that 
+inadequate owner knowledge is closely linked to preventable health issues, behavioural difficulties, 
+and abandonment. This problem is particularly pronounced among first -time owners, who may 
+underestimate the long-term responsibilities associated with pet care. 
+At the same time, studies of online information behaviour reveal that individuals increasingly rely 
+on digital platforms as their primary source of guidance. While this creates opportunities for 
+widespread dissemination of knowledge, it also introduces cha llenges related to information 
+quality, credibility, and consistency. Several authors highlight that online pet care information is 
+often fragmented across blogs, forums, commercial sites, and social media, making it difficult for 
+users to assess reliability or completeness. 
+The literature also points to a tension between professional authority and peer -generated content. 
+While veterinary and welfare organisations provide evidence-based guidance, users frequently turn 
+to peer communities for experiential advice and emotional s upport. Without appropriate 
+moderation or contextualisation, these environments can inadvertently normalise misinformation 
+or unsafe practices. 
+Taken together, these findings suggest that the core problem is not merely a lack of information, 
+but a lack of structured, trustworthy, and socially reinforced knowledge  within accessible 
+digital environments. This problem framing moves beyond surface -level content provision and 
+highlights the need for integrated systems that combine authoritative guidance with community 
+interaction. 
+ 
+3.3 Education, Trust, and Community in Digital Welfare 
+Platforms 
+A recurring theme in the literature is the relationship between education, trust, and community 
+engagement in digital platforms. Research on online learning and information systems indicates 
+that users are more likely to engage with and retain information when it is presented in a clear, 
+structured manner and reinforced through social interaction. However, trust in digital content is 
+13 
+influenced not only by source credibility but also by interface design, transparency, and governance 
+mechanisms. 
+Studies of online communities demonstrate that moderated environments with clear norms are more 
+effective at fostering constructive dialogue and knowledge exchange. Conversely, unmoderated or 
+poorly governed forums tend to prioritise anecdotal experience o ver evidence -based guidance, 
+which can undermine welfare outcomes. This is particularly problematic in domains involving 
+health or care, where inaccurate advice may have serious consequences. 
+Importantly, the literature suggests that effective platforms do not position professional knowledge 
+and community knowledge as competing forces. Instead, successful systems integrate these forms 
+of knowledge by providing authoritative reference points whi le allowing users to contextualise 
+information through shared experience. This synthesis supports learning, confidence-building, and 
+responsible decision-making. 
+This body of research underpins the conceptual foundation of the proposed study. It supports the 
+argument that a platform such as PurrfectStart should not function solely as an informational 
+repository, nor as an unstructured social forum, but as a careful ly designed hybrid that aligns 
+education, trust, and community interaction. 
+ 
+3.4 Implications for User-Centred and Ethical Design 
+The literature further emphasises the role of user -centred design in ensuring that digital welfare 
+platforms are accessible, inclusive, and effective. Research in human –computer interaction 
+highlights that poor usability, excessive cognitive load, and inaccessible interfaces can undermine 
+even high -quality content. Accessibility standards and usability principles are therefore not 
+peripheral concerns but integral to ethical and effective system design. 
+Ethical considerations also feature prominently in the literature, particularly regarding 
+responsibility for content accuracy and user influence. Authors caution that platforms addressing 
+welfare-related issues must clearly distinguish between informationa l guidance and professional 
+advice, and must implement safeguards against harm caused by misinformation or social pressure. 
+These insights reinforce the importance of design decisions that prioritise clarity, transparency, and 
+user protection. They also support the need for explicit moderation policies, disclaimers, and 
+content governance structures within the proposed platform. 
+ 
+3.5 Conclusions 
+14 
+This literature review has identified a clear convergence of issues related to animal welfare 
+education, digital information credibility, and community-based knowledge sharing. The reviewed 
+literature demonstrates that fragmented information systems, unmod erated online communities, 
+and poor usability collectively contribute to suboptimal welfare outcomes for domestic animals. 
+The key insight taken forward is that effective digital interventions must integrate authoritative 
+knowledge, ethical governance, and user -centred design within a single coherent system. This 
+understanding directly informs the proposed study by justifying the development of an integrated 
+web-based platform rather than isolated features or content repositories. 
+The findings of this review influence subsequent stages of the project by shaping the system 
+requirements, feature selection, and design priorities. In particular, they emphasise the need for 
+structured educational content, moderated community interaction,  and accessibility -conscious 
+design. These principles form the conceptual bridge between the literature and the practical 
+development of the PurrfectStart platform. 
+ 
+4. Product Research 
+The purpose of the product research phase is to evaluate existing digital platforms operating within 
+the pet care, adoption, and veterinary information domain in order to contextualise the design and 
+usability decisions for the proposed system. Rather than assessing technical implementation details, 
+this analysis focuses on how effectively similar platforms support user goals through their interface 
+design, content structure, and interaction patterns. The findings of this evaluation inform usability 
+priorities and highlight design trade-offs relevant to the development of the PurrfectStart platform. 
+ 
+4.1 Comparing Similar Products or Platforms Against a Set 
+of Usability Criteria 
+A comparative usability analysis was conducted on a selected set of existing pet care and animal 
+welfare platforms. The platforms were chosen based on their relevance to the project’s core 
+functions, namely educational content provision, adoption facilitat ion, veterinary service 
+discovery, and community interaction. The intention was not to identify a single “best” product, 
+but to examine how different design approaches succeed or fail in supporting user needs. 
+To ensure consistency, platforms were evaluated against a common set of usability criteria derived 
+from established usability principles and human –computer interaction literature. These criteria 
+included: 
+15 
+● Learnability, referring to how easily first-time users can understand the platform structure 
+and navigate key features.  
+ 
+● Efficiency, relating to how quickly users can complete common tasks once familiar with 
+the system.  
+ 
+● Information clarity, assessing the organisation, readability, and coherence of content.  
+ 
+● Accessibility, considering responsiveness, visual contrast, and accommodation of diverse 
+user needs.  
+ 
+● User trust and credibility cues, such as transparency of information sources, professional 
+endorsements, and moderation visibility.  
+ 
+The analysis revealed that platforms focusing primarily on informational content often perform 
+well in terms of information depth but struggle with engagement and navigation efficiency. Dense 
+text layouts and weak information hierarchies can overwhelm user s, particularly those seeking 
+quick guidance. Conversely, adoption-focused platforms tend to prioritise visual appeal and search 
+functionality, yet frequently provide limited contextual education, assuming a level of prior 
+knowledge that may not exist among first-time adopters. 
+Veterinary directory platforms typically offer efficient search and filtering tools but often lack 
+meaningful explanations of how services differ or how users should interpret reviews. This places 
+a cognitive burden on users to make decisions without sufficient guidance, potentially undermining 
+trust. Community-based platforms, while effective at fostering peer interaction, frequently exhibit 
+usability weaknesses related to content discoverability and moderation clarity. In such 
+environments, valuable advice may be buried within long discussion threads, reducing its practical 
+usefulness. 
+Across platforms, accessibility emerged as an inconsistent consideration. While many systems 
+demonstrate mobile responsiveness, fewer exhibit deliberate attention to readability, clear 
+navigation cues, or reduced cognitive load. Importantly, platforms that scored well across multiple 
+usability criteria tended to balance structured content with intuitive navigation rather than relying 
+solely on visual design or feature quantity. 
+This comparative analysis highlights a recurring usability gap: few platforms successfully integrate 
+education, service discovery, and community interaction within a cohesive and user -centred 
+interface. These findings directly inform the design rationale f or PurrfectStart, which seeks to 
+prioritise clarity, guided navigation, and balanced information presentation. By learning from the 
+usability strengths and limitations of existing platforms, the proposed system aims to reduce user 
+effort, support informed decision-making, and improve overall user experience. 
+16 
+ 5. Legal, Social, Ethical and Professional Issues and 
+Considerations 
+The development of a digital platform concerned with animal welfare, community interaction, and 
+user-generated content raises a set of interrelated legal, social, ethical, and professional 
+considerations. These considerations cannot be meaningfully separat ed, as legal compliance 
+influences ethical responsibility, social impact shapes professional obligations, and design 
+decisions mediate all three. This section therefore addresses these aspects holistically, focusing on 
+how they shape both the scope and implementation of the proposed system. 
+From a legal perspective, the most directly applicable legislation relates to data protection and 
+privacy. The platform requires user registration to enable participation in community forums, 
+submission of adoption listings, and interaction with veterinary  service reviews. As such, the 
+collection and processing of personal data must comply with the UK General Data Protection 
+Regulation and the Data Protection Act 2018. This includes lawful data processing, transparency 
+regarding data usage, secure storage, and the provision of user rights such as access, rectification, 
+and deletion. Other legislation, such as consumer protection law and e-commerce regulations, was 
+considered but deemed less applicable, as the platform does not directly facilitate commercial 
+transactions or provide paid services. 
+Social considerations are closely linked to the ethical responsibilities of providing information 
+related to animal welfare. The literature indicates that poorly governed online spaces can normalise 
+misinformation and harmful practices. Consequently, the p latform must balance openness and 
+inclusivity with safeguards that protect both animals and users. Community moderation policies, 
+clear content guidelines, and the visible distinction between informational guidance and 
+professional veterinary advice are therefore essential. These measures serve both a social function, 
+by fostering a supportive and respectful community, and an ethical function, by reducing the risk 
+of harm caused by inaccurate or misleading advice. 
+Ethically, the project assumes a duty of care toward animals, users, and associated professionals. 
+Care guidance must be evidence-informed and regularly reviewed, while disclaimers must clearly 
+communicate the limits of the platform’s responsibility. Adopt ion-related features must avoid 
+encouraging impulsive behaviour and instead promote informed, responsible decision -making. 
+This ethical stance directly influences design decisions, such as the structuring of adoption listings, 
+the presentation of care information, and the moderation of peer discussions. 
+Professional considerations further reinforce these responsibilities. As a computing project, the 
+system is expected to align with recognised professional standards, including those related to public 
+interest, competence, and accountability. This includes maintaining documentation clarity, 
+designing for accessibility, and ensuring that technical decisions can be justified academically and 
+ethically. Collectively, these legal, social, ethical, and professional considerations form a constraint 
+framework within which system requirements are defined and evaluated. 
+ 
+17 
+6. Requirements 
+The requirements for the PurrfectStart platform have been derived through a combination of 
+literature review, product research, and reflective analysis of the project’s legal, ethical, and 
+professional context. Rather than treating requirements as purely technical specifications, they are 
+framed as responses to identified user needs, usability challenges, and governance responsibilities. 
+ 
+6.1 Analysis of Requirements 
+In this project, requirements arise from the need to support responsible cat ownership while 
+mitigating risks associated with misinformation, poor usability, and inadequate governance. The 
+analysis indicates that users require more than access to informati on; they require structured 
+guidance, contextual support, and intuitive interaction mechanisms. 
+Key requirement drivers include: 
+● The need for credible, structured educational content accessible to non -expert users.  
+ 
+● The requirement for ethical facilitation of adoption without assuming liability for 
+outcomes. 
+ 
+● The necessity of community interaction that is moderated and transparent.  
+ 
+● Legal obligations relating to data protection and user privacy.  
+ 
+● Accessibility and usability expectations for diverse user groups.  
+ 
+These drivers inform both what the system must do and how it must behave, shaping functional 
+and non-functional requirements simultaneously. 
+ 
+6.2 Comparison of Systems 
+Existing systems within the pet care domain were examined during product research to elicit 
+implicit and explicit requirements. Informational platforms demonstrate the importance of clear 
+content categorisation but reveal weaknesses in engagement and navig ation efficiency. Adoption 
+platforms highlight the value of searchable listings but often lack educational context that supports 
+responsible decision-making. Veterinary directory systems emphasise efficient search functionality 
+yet provide limited interpretive support for users evaluating services. 
+18 
+Community-based platforms illustrate the demand for peer interaction but expose the risks of 
+unmoderated environments. From these comparisons, several requirements emerge indirectly, such 
+as the need for guided navigation, contextual explanations, visible moderation, and integration 
+between informational and interactive components. 
+Rather than replicating existing systems, the proposed platform synthesises these insights to define 
+requirements that address recurring usability and governance gaps. 
+ 
+6.3 Requirements Elicitation 
+Formal primary research methods such as large-scale questionnaires or interviews were considered 
+but deemed impractical within the scope and timeline of the project. Instead, requirements 
+elicitation was conducted through secondary research, reflective analysis, and informal observation 
+of user behaviour within existing platforms and online communities. 
+This approach, while limited in scale, is appropriate for an academic project focused on conceptual 
+design and usability justification. Insights from literature and platform analysis were triangulated 
+to identify consistent user needs and pain points. Ethical considerations were applied to ensure that 
+assumptions about user behaviour remained cautious and justifiable. 
+This elicitation process prioritised feasibility and relevance over breadth, ensuring that identified 
+requirements could be realistically implemented and evaluated within the project constraints. 
+ 
+6.4 Functional Requirements 
+The functional requirements define the core capabilities of the system and provide the foundation 
+for subsequent design and implementation. At a minimum, the system must support the following 
+functions: 
+● User registration and authentication to enable personalised interaction.  
+ 
+● Access to structured educational content on cat and kitten care.  
+ 
+● Browsing and searching adoption listings with clear contextual information.  
+ 
+● Discovery of veterinary services using location -based search and user reviews.  
+ 
+● Participation in community forums, including posting, replying, and reporting content.  
+ 
+19 
+● Administrative moderation tools for managing user -generated content.  
+ 
+These functional requirements directly address the needs identified through literature and product 
+research and ensure that the platform delivers meaningful value beyond static information 
+provision. 
+ 
+6.5 Non-Functional Requirements 
+Non-functional requirements define how the system performs and how it aligns with earlier legal, 
+social, ethical, and professional considerations. These requirements include: 
+● Usability: The interface must be intuitive, with clear navigation structures and minimal 
+cognitive load.  
+ 
+● Accessibility: Compliance with recognised accessibility guidelines is required to ensure 
+inclusivity. 
+ 
+● Performance: Pages must load efficiently across devices and network conditions.  
+ 
+● Security: User data must be protected through secure authentication and storage 
+mechanisms. 
+ 
+● Reliability: Core features must function consistently without data loss or unexpected 
+behaviour. 
+ 
+● Maintainability: The system should support content updates and moderation without 
+extensive technical overhead.  
+ 
+Compliance with these non-functional requirements reinforces the platform’s ethical responsibility 
+and professional credibility. They ensure that legal obligations are met, social risks are mitigated, 
+and user trust is supported through reliable and transparent system behaviour. 
+ 
+ 
+ 
+7. Design 
+20 
+The design of the PurrfectStart platform is driven by the need to translate abstract requirements 
+into concrete structures that support usability, accessibility, and ethical responsibility. Rather than 
+treating design as a discrete phase following requirem ents, this project recognises the blurred 
+boundary between requirements and design, particularly where user interaction is concerned. As 
+noted by Šilingas and Butleris (2015), artefacts such as use -case representations often function 
+simultaneously as requirement definitions and design instruments. 
+The design approach begins with identifying core user interactions and translating these into high-
+level interaction flows. These flows inform decisions regarding page structure, navigation 
+hierarchy, and content grouping. While formal UML use-case notation can be used to express these 
+interactions, the emphasis in this project is on their functional meaning rather than strict syntactic 
+compliance. The use of interaction scenarios allows design decisions to remain grounded in user 
+goals rather than abstract system components. 
+Other UML artefacts, such as component or activity diagrams, are treated as supportive design 
+tools rather than ends in themselves. Their role is to clarify system boundaries, data movement, and 
+responsibilities between components, particularly where these overlap with testing considerations 
+such as error handling and edge cases. This pragmatic use of modelling supports clarity without 
+imposing unnecessary complexity. 
+Overall, the design process is iterative and exploratory. Early design decisions are revisited as 
+insights emerge from prototyping and evaluation. This reflects the reality of user -centred design, 
+where understanding of the problem space evolves through engagement with design artefacts rather 
+than being fully resolved at the outset. 
+ 
+8. Prototype 
+Prototyping plays a central role in the development of the PurrfectStart platform, serving as both a 
+design exploration tool and a mechanism for evaluating usability assumptions. Rather than 
+producing a single definitive prototype, the project adopts an in cremental approach in which 
+multiple prototypes are developed, reviewed, and refined. 
+The initial prototype focuses on structural representation, including page layout, navigation flow, 
+and content hierarchy. This low -fidelity prototype enables early identification of usability issues 
+without the overhead of full implementation. Subsequent prototypes introduce increasing levels of 
+interactivity, allowing features such as search functionality, content browsing, and community 
+interaction to be explored in a more realistic context. 
+Each iteration of the prototype responds to emerging insights regarding user effort, clarity, and 
+interaction friction. The progression from low -fidelity to higher -fidelity prototypes supports 
+reflective evaluation and reduces the risk of committing premat urely to ineffective design 
+decisions. This approach aligns with the project’s emphasis on learning through making rather than 
+assuming correctness at the outset. 
+21 
+ 
+8.1 Review of Technology 
+The review of technology is conducted in direct support of the prototyping process rather than as 
+an abstract technical comparison. The technologies considered are evaluated according to their 
+suitability for implementing the identified requirements within the project’s scope and constraints. 
+For data storage and content management, the need for a flexible, maintainable system capable of 
+supporting user-generated content and structured information was identified. Several database and 
+content management options were considered, including bespoke relational database solutions and 
+integrated content management systems. A full custom database solution was ultimately excluded 
+due to the development overhead and limited added value within an academic project context. 
+Similarly, multiple web development approaches were reviewed, ranging from fully custom 
+frameworks to established website platforms with extensible plugin ecosystems. While custom 
+frameworks offer greater control, they also introduce significant complexity  and risk within a 
+constrained timeframe. Platform-based solutions provide integrated hosting, security features, and 
+rapid prototyping capabilities, making them more appropriate for iterative design and usability 
+evaluation. 
+Three candidate platforms were examined in greater detail based on extensibility, usability support, 
+accessibility features, and community ecosystem. The selected platform was chosen not because it 
+was the most technically sophisticated, but because it off ered the best balance between 
+functionality, reliability, and development efficiency. This decision reflects a pragmatic 
+prioritisation of usability outcomes over technical novelty. 
+ 
+9. Reflection 
+This project has highlighted the value of adopting a reflective and adaptive approach to system 
+development. Initial assumptions regarding user needs, platform capabilities, and development 
+structure were challenged as the project progressed, reinforcing the importance of remaining open 
+to revision and learning. 
+One key insight is that effective design emerges through engagement with artefacts rather than rigid 
+adherence to predefined plans. The iterative movement between research, design, and prototyping 
+revealed mismatches between initial expectations and practical realities, particularly in relation to 
+usability and content organisation. Acknowledging these mismatches allowed the project to evolve 
+in a more grounded and defensible direction. 
+From a personal development perspective, the project underscored the limitations of relying on 
+formal methodologies as substitutes for critical thinking. While methodological frameworks 
+provide useful guidance, meaningful progress depended on reflective ju dgement, ethical 
+22 
+awareness, and willingness to revise earlier decisions. This aligns with contemporary views on 
+reflective practice, which emphasise learning through experience rather than procedural 
+compliance. 
+In conclusion, the project demonstrates that thoughtful integration of research, design, and 
+reflection can produce a system that is both academically rigorous and practically meaningful. The 
+reflective insights gained through this process will inform future work by reinforcing the value of 
+adaptability, user-centred thinking, and ethical responsibility in digital system development. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+References 
+Bateson, P. and Turner, D.C. (2000) Domestic cat: The biology of its behaviour . 2nd edn. 
+Cambridge: Cambridge University Press. 
+23 
+Cooper, A., Reimann, R. and Cronin, D. (2014) About face: The essentials of interaction design . 
+4th edn. Hoboken, NJ: Wiley. 
+Day, C. (2013) The new lives of teachers. London: Routledge. 
+Information Commissioner’s Office (2024) Guide to the UK General Data Protection Regulation 
+(UK GDPR). Available at:  https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-
+the-general-data-protection-regulation-gdpr/ (Accessed: 4 November 2025). 
+International Cat Care (2024) Kitten care guidelines . Available at:  
+https://icatcare.org/advice/kitten-care/ (Accessed: 6 November 2025). 
+Kraut, R.E. and Resnick, P. (2012) Building successful online communities: Evidence-based social 
+design. Cambridge, MA: MIT Press. 
+Krug, S. (2014) Don’t make me think, revisited: A common sense approach to web usability . 3rd 
+edn. Berkeley, CA: New Riders. 
+Nielsen, J. and Loranger, H. (2006) Prioritizing web usability. Berkeley, CA: New Riders. 
+Preece, J. (2000) Online communities: Designing usability, supporting sociability. Chichester: John 
+Wiley & Sons. 
+Project Management Institute (2021) A guide to the project management body of knowledge 
+(PMBOK® guide). 7th edn. Newtown Square, PA: PMI. 
+RSPCA (2024) Cat welfare and care information . Available at:  
+https://www.rspca.org.uk/adviceandwelfare/pets/cats (Accessed: 7 November 2025). 
+Rudestam, K.E. and Newton, R.R. (2007) Surviving your dissertation: A comprehensive guide to 
+content and process. 3rd edn. Thousand Oaks, CA: Sage Publications. 
+Schwaber, K. and Sutherland, J. (2020) The Scrum guide . Available at:  https://scrumguides.org/ 
+(Accessed: 7 November 2025). 
+Šilingas, D. and Butleris, R. (2015) ‘Towards the use of UML use case models for business 
+requirements modelling’, Information Systems Development, 24(1), pp. 1–10. 
+ 
+ 
+ 
+  
+24 
+Appendix A – Project Proposal 
+The final approved project proposal is included here for reference. 

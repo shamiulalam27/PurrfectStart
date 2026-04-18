@@ -1,0 +1,267 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--background-bg);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4rem;
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(45,55,72,0.85) 0%, rgba(45,55,72,0.4) 100%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.glassCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 3rem;
+  border-radius: var(--radius-lg);
+  max-width: 800px;
+  color: white;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+}
+
+.searchForm {
+  display: flex;
+  background: white;
+  padding: 0.5rem;
+  border-radius: var(--radius-full);
+  gap: 0.5rem;
+}
+
+.searchInputGroup {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 0 1rem;
+  gap: 0.5rem;
+  color: var(--text-muted);
+}
+
+.searchInputGroup input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  color: var(--text-dark);
+}
+
+.searchDivider {
+  width: 1px;
+  background: var(--border-color);
+  margin: 0.5rem 0;
+}
+
+.searchBtn {
+  padding: 0.8rem 2rem;
+}
+
+/* Vet Directory Section */
+.directorySection {
+  padding: 4rem 0;
+  flex-grow: 1;
+}
+
+.directoryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.directoryHeader h2 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.directoryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.vetCard {
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.vetCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--secondary-color);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vetCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.vetCard:hover::before {
+  opacity: 1;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.vetName {
+  font-size: 1.3rem;
+  margin-bottom: 0.2rem;
+  color: var(--text-dark);
+}
+
+.vetSpecialty {
+  color: var(--secondary-color);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ratingBadge {
+  background: #FEF7E0;
+  color: #F29900;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.contactInfo {
+  margin-bottom: 1.5rem;
+}
+
+.infoRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.infoIcon {
+  color: var(--primary-color);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.featuresList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.featureChip {
+  background: #F4F6F9;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: var(--text-dark);
+}
+
+.cardFooter {
+  display: flex;
+  gap: 1rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+}
+
+.cardFooter .btn {
+  flex: 1;
+  padding: 0.6rem;
+  font-size: 0.9rem;
+}
+
+/* CTA */
+.ctaBox {
+  background: var(--secondary-color);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  text-align: center;
+  margin-top: 4rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ctaBox h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.ctaBox p {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 8rem;
+  }
+}
