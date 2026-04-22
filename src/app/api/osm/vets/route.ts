@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
+// Vercel-specific: allow this route more time when the provider is slow.
+// (Actual max depends on plan, but exporting this is harmless elsewhere.)
+export const maxDuration = 30;
 
 type OverpassElement = {
   type: 'node' | 'way' | 'relation';
@@ -24,6 +27,13 @@ type OSMVet = {
   phone?: string;
   openingHours?: string;
 };
+
+const OVERPASS_ENDPOINTS = [
+  'https://overpass-api.de/api/interpreter',
+  'https://overpass.kumi.systems/api/interpreter',
+  'https://overpass.nchc.org.tw/api/interpreter',
+  'https://overpass.openstreetmap.ru/api/interpreter',
+] as const;
 
 function clampNumber(value: number, min: number, max: number) {
   return Math.min(max, Math.max(min, value));
@@ -50,6 +60,47 @@ function getPhone(tags: Record<string, string> | undefined) {
   return tags['phone'] || tags['contact:phone'] || tags['mobile'] || tags['contact:mobile'];
 }
 
+async function fetchOverpass(
+  endpoint: string,
+  query: string,
+  headers: Record<string, string>,
+  timeoutMs: number,
+): Promise<{ ok: true; data: OverpassResponse } | { ok: false; status?: number; error: string }> {
+  const controller = new AbortController();
+  const timeoutHandle = setTimeout(() => controller.abort(), timeoutMs);
+
+  try {
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        ...headers,
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+        Accept: 'application/json',
+      },
+      body: new URLSearchParams({ data: query }),
+      signal: controller.signal,
+      cache: 'no-store',
+    });
+
+    if (!res.ok) {
+      const snippet = (await res.text()).slice(0, 300);
+      return {
+        ok: false,
+        status: res.status,
+        error: snippet || `Overpass returned HTTP ${res.status}`,
+      };
+    }
+
+    const raw: unknown = await res.json();
+    return { ok: true, data: raw as OverpassResponse };
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Unknown error';
+    return { ok: false, error: message };
+  } finally {
+    clearTimeout(timeoutHandle);
+  }
+}
+
 export async function GET(request: NextRequest) {
   const url = new URL(request.url);
   const lat = Number(url.searchParams.get('lat'));
@@ -73,24 +124,38 @@ export async function GET(request: NextRequest) {
 out center tags;
 `;
 
-  const res = await fetch('https://overpass-api.de/api/interpreter', {
-    method: 'POST',
-    headers: {
-      'User-Agent': userAgent,
-      Referer: `https://${host}/vet-finder`,
-      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-      Accept: 'application/json',
-    },
-    body: new URLSearchParams({ data: query }),
-    next: { revalidate: 60 * 60 },
-  });
+  const upstreamHeaders = {
+    'User-Agent': userAgent,
+    Referer: `https://${host}/vet-finder`,
+  };
 
-  if (!res.ok) {
-    return NextResponse.json({ vets: [], error: 'Upstream vets search failed' }, { status: 502 });
+  const attempts: Array<{ endpoint: string; status?: number; error?: string }> = [];
+  let data: OverpassResponse | null = null;
+
+  // Vercel serverless + public Overpass can be flaky (timeouts / 429 / IP blocks).
+  // Try a few well-known public instances quickly.
+  for (const endpoint of OVERPASS_ENDPOINTS) {
+    const result = await fetchOverpass(endpoint, query, upstreamHeaders, 9000);
+    if (result.ok) {
+      data = result.data;
+      break;
+    }
+    attempts.push({ endpoint, status: result.status, error: result.error });
   }
 
-  const raw: unknown = await res.json();
-  const data = raw as OverpassResponse;
+  if (!data) {
+    return NextResponse.json(
+      {
+        vets: [],
+        error: 'Could not reach the OpenStreetMap vet provider. Please try again shortly.',
+        debug: {
+          attempts: attempts.map((a) => ({ endpoint: a.endpoint, status: a.status })),
+        },
+      },
+      { status: 502 },
+    );
+  }
+
   const elements = Array.isArray(data.elements) ? data.elements : [];
 
   const vets: OSMVet[] = [];
