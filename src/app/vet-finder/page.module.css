@@ -8,11 +8,11 @@
 /* Hero Section */
 .hero {
   position: relative;
-  min-height: 40vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 4rem;
+  padding: 6rem 0 4rem;
 }
 
 .heroBackground {
@@ -64,12 +64,20 @@
   margin-bottom: 2rem;
 }
 
+.searchWrapper {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 .searchForm {
   display: flex;
   background: white;
   padding: 0.5rem;
   border-radius: var(--radius-full);
   gap: 0.5rem;
+  align-items: center;
+  box-shadow: var(--shadow-md);
 }
 
 .searchInputGroup {
@@ -81,19 +89,52 @@
   color: var(--text-muted);
 }
 
-.searchInputGroup input {
+.searchInput {
   width: 100%;
   border: none;
   outline: none;
   font-size: 1rem;
   font-family: var(--font-body);
   color: var(--text-dark);
+  background: transparent;
+  padding: 0.7rem 0;
 }
 
-.searchDivider {
-  width: 1px;
-  background: var(--border-color);
-  margin: 0.5rem 0;
+.suggestionsPanel {
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  z-index: 20;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.suggestionItem {
+  width: 100%;
+  text-align: left;
+  padding: 0.9rem 1rem;
+  background: white;
+  border: none;
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.suggestionItem:hover {
+  background: var(--background-bg);
+}
+
+.suggestionLoading {
+  padding: 1rem;
+  color: var(--text-muted);
+  font-weight: 700;
 }
 
 .searchBtn {
@@ -116,6 +157,39 @@
 .directoryHeader h2 {
   font-size: 1.8rem;
   margin: 0;
+}
+
+.resultsMeta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.resultsCount {
+  color: var(--text-muted);
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.mapWrapper {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  height: 520px;
+  margin-bottom: 2rem;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+.errorText {
+  color: var(--text-muted);
+  font-weight: 700;
+  margin-bottom: 2rem;
 }
 
 .directoryGrid {
@@ -262,6 +336,11 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: 8rem;
+    min-height: 40vh;
+    padding: 8rem 0 4rem;
+  }
+
+  .mapWrapper {
+    height: 380px;
   }
 }
